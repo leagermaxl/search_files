@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="kursachh.MainWindow">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="kursachh.FileItem">
+    <Position X="7.75" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>IAAAACAAAAAAAAAAAAAAAABAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FileItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="kursachh.FileReader">
+    <Position X="9.75" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAiAAAQYAAAIAAAACAAAAAABAAAAEQAAAQAAAAAA=</HashCode>
+      <FileName>FileReader.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="kursachh.ItemSource">
+    <Position X="12.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAQAIAAAECAAARAAAAEAQDAAAEAwAAAAAA=</HashCode>
+      <FileName>ItemSource.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="kursachh.Page1">
+    <Position X="2.5" Y="0.5" Width="2.25" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Delegate Name="kursachh.Page1.UpdateProgressBarDelegate">
+        <TypeIdentifier>
+          <NewMemberFileName>Page1.xaml.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Delegate>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>EAAAAABAQQAQAAAABAIIAAAAAAACACAAEAAAAEAIBAA=</HashCode>
+      <FileName>Page1.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="kursachh.Page2">
+    <Position X="5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>QAAEAAAAAAAAAAAAAALAAAgAAAEAQAAAAAAAAAAAQAQ=</HashCode>
+      <FileName>Page2.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

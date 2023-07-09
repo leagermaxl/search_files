@@ -1,0 +1,75 @@
+﻿<Page x:Class="multitool_search_files.Page2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:multitool_search_files"
+      mc:Ignorable="d" 
+      d:DesignHeight="1000" 
+      d:DesignWidth="1200"
+      Title="Page2">
+
+    <Grid Background="AliceBlue">
+        <DataGrid Margin="20,20,20,0" 
+                  VerticalAlignment="Top"
+                  x:Name="dataGrid1"
+                  AutoGenerateColumns="False"
+                  MouseDoubleClick="DataGrid1_MouseDoubleClick" Height="400"
+                  IsReadOnly="True"
+                  >
+
+            <DataGrid.Columns >
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" />
+                <DataGridTextColumn Header="Розмір" Binding="{Binding Length}" />
+                <DataGridTextColumn Header="Розширення" Binding="{Binding Extension}" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid Margin="20,464,20,0" 
+                  VerticalAlignment="Top"
+                  x:Name="dataGrid2"
+                  AutoGenerateColumns="False"
+                  Height="400"
+                  >
+            <DataGrid.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Відкрити розташування" Click="dataGrid2_MouseOpenDirClick"/>
+                    <MenuItem Header="Видалити" Click="dataGrid2_MouseDelClick"/>
+                </ContextMenu>
+            </DataGrid.ContextMenu>
+
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Select" Binding="{Binding Select}" IsReadOnly="False" />
+                <DataGridTextColumn Header="Назва" Binding="{Binding Name}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Розмір" Binding="{Binding Length}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Шлях" Binding="{Binding Directory}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Час створення" Binding="{Binding CreationTime}" IsReadOnly="True" />
+                <DataGridTextColumn Header="Розширення" Binding="{Binding Extension}" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <TextBlock x:Name="textBlockEmpty"
+                   Text="Немає однакових файлів" 
+                   Margin="361,177,361,744"
+                   FontSize="40"
+                   TextAlignment="Center"
+                   />
+
+        <Button x:Name="buttonDelAll"
+                Margin="20,884,1005,45"
+                FontSize="25" Click="buttonDelAll_Click"
+                >
+            <TextBlock Text="Видалити всі копії"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="buttonDelSelect"
+                Margin="242,884,782,45"
+                FontSize="25" Click="buttonDelSelect_Click"
+                >
+            <TextBlock Text="Видалити обрані"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"/>
+        </Button>
+    </Grid>
+</Page>

@@ -1,0 +1,197 @@
+﻿<Page x:Class="multitool_search_files.Page1"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:multitool_search_files"
+      mc:Ignorable="d"
+      d:DesignHeight="1000" 
+      d:DesignWidth="1200"
+      Title="Page1"
+      >
+
+    <Grid Background="AliceBlue" Margin="2,-1,-2,1">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <ComboBox x:Name = "comboBox"
+                  VerticalContentAlignment="Center"
+                  FontSize="25"
+                  Grid.ColumnSpan="2" 
+                  Margin="37,136,59,138"
+                  />
+
+        <Button x:Name="buttonAddDir"
+                Margin="14,129,146,131"
+                FontSize="22" 
+                Click="buttonAddDir_Click" 
+                RenderTransformOrigin="0.5,0.5"
+                Grid.Column="2"
+                >
+            <TextBlock Text="Додати директорію"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"/>
+        </Button>
+        <GroupBox FontSize="30"
+                  BorderBrush="Black" 
+                  Grid.ColumnSpan="3" 
+                  Margin="22,9,128,233" Grid.Row="1"
+                  />
+
+        <Button x:Name="buttonDelDir"
+                Margin="231,130,229,130"
+                FontSize="22" 
+                Click="buttonDelDir_Click" 
+                RenderTransformOrigin="0.5,0.5"
+                Grid.Column="2" Grid.ColumnSpan="2"
+                >
+            <TextBlock Text="Видалити директорію"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"/>
+        </Button>
+
+        <Button x:Name="buttonSearch" 
+                Grid.Column="3"
+                Margin="12,40,12,40"
+                Content="Пошук"
+                FontSize="30" 
+                Grid.Row="1" 
+                Click="buttonSearch_Click"
+                />
+
+
+        <ProgressBar x:Name="progressBar"
+                     Minimum="0" 
+                     Maximum="100" 
+                     Value="75" 
+                     Margin="39,133,39,109" 
+                     Grid.Row="2" 
+                     Grid.ColumnSpan="2"
+                     Grid.Column="1"/>
+
+        <TextBlock x:Name="textBlockProgBar"
+                   Margin="154,232,154,46" 
+                   Grid.Column="1" 
+                   Grid.ColumnSpan="2" 
+                   Grid.Row="2"
+                   FontSize="30"
+                   Text="Йде пошук файлів..."
+                   />
+
+
+
+        <TextBox x:Name = "textBoxExt"
+                 FontSize="25" 
+                 Margin="39,251,59,23" Grid.Column="1"
+                 VerticalContentAlignment="Center"/>
+
+        <TextBlock x:Name="textBlockAddExt"
+                   Margin="37,255,271,23" 
+                   Grid.ColumnSpan="2"
+                   FontSize="30"
+                   Text="Введіть розширення:"
+                   />
+
+        <ComboBox x:Name = "comboBoxExt"
+                  FontSize="25" 
+                  Margin="39,25,59,251" 
+                  Grid.Row="1" 
+                  Grid.Column="1"
+                  VerticalContentAlignment="Center"/>
+
+        <Button x:Name="buttonAddExt"
+                Margin="14,246,146,14"
+                FontSize="22" 
+                Click="buttonAddExt_Click" 
+                Grid.Column="2">
+            <TextBlock Text="Додати розширення"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"/>
+        </Button>
+
+        <Button x:Name="buttonDelExt"
+                Margin="14,18,145,244"
+                FontSize="22" 
+                Click="buttonDelExt_Click"
+                Grid.Column="2" Grid.Row="1"
+                >
+            <TextBlock Text="Видалити розширення"
+                       TextWrapping="Wrap"
+                       TextAlignment="Center"/>
+        </Button>
+
+        <Slider x:Name="sliderMin"
+                VerticalAlignment="Center" 
+                Grid.ColumnSpan="2" 
+                Grid.Row="1" 
+                Margin="37,0,63,0"
+                Maximum="9999"
+                Minimum="0"
+                SmallChange="1"
+                TickFrequency="1000"
+                TickPlacement="BottomRight"
+                ValueChanged="slidersValueChanged"
+                />
+
+        <Slider x:Name="sliderMax"
+                VerticalAlignment="Top" 
+                Grid.ColumnSpan="2" 
+                Grid.Row="1" 
+                Margin="37,204,63,0"
+                Maximum="10000"
+                Minimum="1"
+                SmallChange="1"
+                TickFrequency="1000"
+                Value="10000"
+                TickPlacement="BottomRight"
+                ValueChanged="slidersValueChanged"
+                />
+
+        <TextBlock FontSize="20"
+                   Text="{Binding ElementName=sliderMin, Path=Value, StringFormat={}{0:n0} Mb}"
+                   TextAlignment="Left" 
+                   Grid.Column="1" 
+                   Margin="250,146,194,156" 
+                   Grid.Row="1" Grid.ColumnSpan="2" RenderTransformOrigin="0.542,1.206"
+                   />
+
+        <TextBlock FontSize="20"
+                   Text="{Binding ElementName=sliderMax, Path=Value, StringFormat={}{0:n0} Mb}"
+                   TextAlignment="Left" 
+                   Grid.Column="1" 
+                   Margin="250,194,194,106" 
+                   Grid.Row="1" Grid.ColumnSpan="2" />
+
+        <GroupBox FontSize="30"
+            BorderBrush="Black" 
+            Grid.ColumnSpan="4" 
+            Margin="22,116,210,118"
+                  />
+        <GroupBox FontSize="30"
+            BorderBrush="Black" 
+            Grid.ColumnSpan="3" 
+            Margin="22,232,128,3"
+                  />
+        <TextBlock x:Name="textBlockCurExt"
+            Margin="37,27,271,251" 
+            Grid.ColumnSpan="2"
+            FontSize="30"
+            Text="Додані розширення:" Grid.Row="1"
+                   />
+        <GroupBox FontSize="30"
+            BorderBrush="Black" 
+            Grid.ColumnSpan="3" 
+            Margin="22,138,244,96" Grid.Row="1"
+                  />
+
+
+    </Grid>
+</Page>
